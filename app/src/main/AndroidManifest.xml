@@ -11,10 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ChoosenTimetable"
-            android:screenOrientation="landscape"></activity>
-        <activity android:name=".myTimetable"
-            android:screenOrientation="landscape"/>
+        <activity android:name=".FullscreenImg"></activity>
+        <activity
+            android:name=".ChoosenTimetable"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".myTimetable"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".Happiness"
             android:screenOrientation="landscape" />

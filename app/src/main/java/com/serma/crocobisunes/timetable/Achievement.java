@@ -33,19 +33,19 @@ public class Achievement extends AppCompatActivity {
             }
         });
 
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                View full = getLayoutInflater().inflate(R.layout.fullscreen_img,null);
-                ImageView fullscreen =(ImageView)full.findViewById(R.id.imgFullscreen);
-
-
-                fullscreen.setImageResource(img[position]);
-
-                setContentView(R.layout.fullscreen_img);
-
-            }
-        });
+//        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                View full = getLayoutInflater().inflate(R.layout.fullscreen_img,null);
+//                ImageView fullscreen =(ImageView)full.findViewById(R.id.imgFullscreen);
+//
+//
+//                fullscreen.setImageResource(img[position]);
+//
+//                setContentView(R.layout.fullscreen_img);
+//
+//            }
+//        });
 
     }
     class CustomAdapter extends BaseAdapter {
