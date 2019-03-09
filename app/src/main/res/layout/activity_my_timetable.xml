@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:scaleX="0.80"
+        android:scaleY="0.80"></TimePicker>
+
+
+    <GridLayout
+        android:layout_width="275dp"
+        android:layout_height="273dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="0dp"
+        android:columnCount="2"
+        android:padding="14dp"
+        android:rowCount="2">
+
+        <ImageButton
+            android:id="@+id/food"
+            android:layout_width="122dp"
+            android:layout_height="116dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/food" />
+
+        <ImageButton
+            android:id="@+id/shower"
+            android:layout_width="120dp"
+            android:layout_height="116dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/shower" />
+
+        <ImageButton
+            android:id="@+id/talk"
+            android:layout_width="122dp"
+            android:layout_height="136dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/talk" />
+
+        <ImageButton
+            android:id="@+id/walk"
+            android:layout_width="121dp"
+            android:layout_height="134dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/walk" />
+
+    </GridLayout>
+
+
+</RelativeLayout>
