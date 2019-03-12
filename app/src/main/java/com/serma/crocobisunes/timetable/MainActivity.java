@@ -14,16 +14,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ImageButton btnTimetable=(ImageButton) findViewById(R.id.btnTimetable);
+        ImageButton btnGame=(ImageButton) findViewById(R.id.btnGame);
+        ImageButton btnMenu=(ImageButton) findViewById(R.id.btnMenu);
        // ImageButton btnCalendar=(ImageButton) findViewById(R.id.btnCalendar);
         //ImageButton btnCommunicator=(ImageButton) findViewById(R.id.btnCommunicator);
         //ImageButton btnAchievement=(ImageButton) findViewById(R.id.btnAchievement);
        // ImageButton btnHappiness=(ImageButton) findViewById(R.id.btnHappiness);
         btnTimetable.setOnClickListener(MainActivity.this);
+        btnGame.setOnClickListener(MainActivity.this);
+        btnMenu.setOnClickListener(MainActivity.this);
     //    btnCalendar.setOnClickListener(MainActivity.this);
     //    btnCommunicator.setOnClickListener(MainActivity.this);
     //    btnAchievement.setOnClickListener(MainActivity.this);
     //    btnHappiness.setOnClickListener(MainActivity.this);
         hideNavigator();
+
 
 
     }
@@ -41,24 +46,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent =new Intent(MainActivity.this,TimeTable.class);
                 startActivity(intent);
                 break;
-            /*
-            case R.id.btnCalendar:
-                intent =new Intent(MainActivity.this,Calendar.class);
+
+            case R.id.btnMenu:
+                intent =new Intent(MainActivity.this, Menu.class);
                 startActivity(intent);
                 break;
-            case R.id.btnCommunicator:
-                intent =new Intent(MainActivity.this,Communicator.class);
+
+            case R.id.btnGame:
+                intent =new Intent(MainActivity.this,Game.class);
                 startActivity(intent);
                 break;
-            case R.id.btnAchievement:
-                intent =new Intent(MainActivity.this,Achievement.class);
-                startActivity(intent);
-                break;
-            case R.id.btnHappiness:
-                intent =new Intent(MainActivity.this,Happiness.class);
-                startActivity(intent);
-                break;
-                */
+//            case R.id.btnAchievement:
+//                intent =new Intent(MainActivity.this,Achievement.class);
+//                startActivity(intent);
+//                break;
+//            case R.id.btnHappiness:
+//                intent =new Intent(MainActivity.this,Happiness.class);
+//                startActivity(intent);
+//                break;
+
         }
 
     }

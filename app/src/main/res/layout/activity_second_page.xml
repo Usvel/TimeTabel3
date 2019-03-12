@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondPage">
+
+    <ImageButton
+        android:id="@+id/dir1"
+        android:layout_width="254dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="422dp"
+        android:layout_marginTop="282dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="3dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/dir1" />
+
+    <ImageButton
+        android:id="@+id/dir2"
+        android:layout_width="262dp"
+        android:layout_height="122dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="283dp"
+        android:layout_marginEnd="400dp"
+        android:layout_marginBottom="6dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/dir2" />
+
+    <TextView
+        android:id="@+id/question2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="187dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="65dp"
+        android:text="На какой картинке мальчик прыгает?"
+        android:textSize="20sp" />
+
+    <ImageButton
+        android:id="@+id/jumping"
+        android:layout_width="233dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="480dp"
+        android:layout_marginBottom="144dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/jumping" />
+
+    <ImageButton
+        android:id="@+id/sleeping"
+        android:layout_width="241dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="485dp"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="149dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/sleeping" />
+
+    <ImageButton
+        android:id="@+id/walking"
+        android:layout_width="236dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="251dp"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="244dp"
+        android:layout_marginBottom="145dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/walking" />
+
+</RelativeLayout>

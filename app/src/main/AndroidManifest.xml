@@ -11,7 +11,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".FullscreenImg"></activity>
+        <activity android:name=".Menu"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name=".activity_grid_item"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".SecondPage"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Game"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Video"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".FullscreenImg"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".ChoosenTimetable"
             android:screenOrientation="landscape" />

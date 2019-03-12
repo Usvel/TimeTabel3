@@ -11,6 +11,7 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
@@ -41,8 +42,9 @@ public class TimeTable extends AppCompatActivity implements View.OnClickListener
     int [] imgTimeVt={R.drawable.clock,R.drawable.clock,R.drawable.clock};
     int[] imgActionVt ={R.drawable.slumber,R.drawable.trekking,
             R.drawable.plateforkandknife};
+    int [] videoPn = {R.raw.charging,R.raw.charging,R.raw.charging};
   //  String[] dayOfWeek ={"Понедельник","Вторник","Среда","Четверг","Пятница","Суббота","Воскресенье"};
-    private int currentDay=0;
+    public int currentDay=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,24 +71,15 @@ public class TimeTable extends AppCompatActivity implements View.OnClickListener
         CustomAdapter customAdapter =new CustomAdapter();
         listView.setAdapter(customAdapter);
         hideNavigator();
+        listView.setItemsCanFocus(true);
+        listView.setFocusable(false);
+        listView.setFocusableInTouchMode(false);
+        listView.setClickable(false);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                switch (view.getId()){
-                    case R.id.action:
-                       ImageButton action = (ImageButton) findViewById(R.id.action);
-                        imgFullScreen.setImageDrawable(action.getDrawable());
-                        imgFullScreen.setVisibility(View.VISIBLE);
-                        break;
-                }
-            }
-        });
 
         ImageButton backToMain = (ImageButton) findViewById(R.id.back);
         backToMain.setOnClickListener(TimeTable.this);
-        ImageView fullScreen = (ImageView) findViewById(R.id.expanded_image);
+
 
         CheckBox complete = findViewById(R.id.complete);
 
@@ -165,11 +158,11 @@ public class TimeTable extends AppCompatActivity implements View.OnClickListener
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
             final View view = getLayoutInflater().inflate(R.layout.item_list_view,null);
             ImageView time =(ImageView) view.findViewById(R.id.time);
             ImageButton btnAction =(ImageButton) view.findViewById(R.id.action);
-            ImageView couch =(ImageView) view.findViewById(R.id.couch);
+            final ImageView couch =(ImageView) view.findViewById(R.id.couch);
             if(currentDay==0){
                 time.setImageResource(imgTimePn[position]);
                 btnAction.setImageResource(imgActionPn[position]);
@@ -182,8 +175,38 @@ public class TimeTable extends AppCompatActivity implements View.OnClickListener
                 couch.setImageResource(imgCouch[position]);
 
             }
-//            final int place = position;
+                btnAction.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Log.i("tag","msg");
+                        Intent intent =new Intent(TimeTable.this,FullscreenImg.class);
+                        if(currentDay==0) {
+                            intent.putExtra("Drawable", imgActionPn[position]);
+                            intent.putExtra("video", videoPn[position]);
+                            Log.i("tag", intent.getIntExtra("Drawable", 0) + "");
+                        }else   if(currentDay==1) {
+                            intent.putExtra("Drawable", imgActionVt[position]);
+                            intent.putExtra("video", videoPn[position]);
+                            Log.i("tag", intent.getIntExtra("Drawable", 0) + "");
+                        }
+                          startActivity(intent);
+                    }
+                });
 
+            couch.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.i("tag","msg");
+                    Intent intent =new Intent(TimeTable.this,FullscreenImg.class);
+
+                    intent.putExtra("Drawable",imgCouch[position]);
+
+                    Log.i("tag",intent.getIntExtra("Drawable",0) + "");
+
+
+                    startActivity(intent);
+                }
+            });
 
 
             return view;
