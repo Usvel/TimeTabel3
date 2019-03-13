@@ -8,40 +8,47 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
+        android:layout_width="169dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="88dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginRight="88dp"
         android:text="Расписание"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/btnTimetable"
         app:layout_constraintEnd_toEndOf="@+id/btnTimetable"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintStart_toStartOf="@+id/btnTimetable"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <ImageButton
         android:id="@+id/btnTimetable"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:scaleType="fitCenter"
         android:src="@drawable/timetable"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintEnd_toStartOf="@+id/btnGame"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_weight="1" />
 
     <ImageButton
         android:id="@+id/btnGame"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/guideline2"
-        app:layout_constraintHorizontal_bias="0.558"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintEnd_toStartOf="@+id/btnMenu"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/btnTimetable"
         app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_weight="1"
         app:srcCompat="@drawable/gamepad" />
 
     <TextView
@@ -51,25 +58,13 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:text="Игра"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/btnGame"
         app:layout_constraintEnd_toEndOf="@+id/btnGame"
         app:layout_constraintStart_toStartOf="@+id/btnGame"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.883" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="245dp" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="243dp" />
+        app:layout_constraintVertical_bias="0.883"
+        app:layout_constraintVertical_weight="1" />
 
     <ImageButton
         android:id="@+id/btnMenu"
@@ -78,8 +73,11 @@
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guideline2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/btnGame"
         app:layout_constraintTop_toBottomOf="@+id/txtMenu"
+        app:layout_constraintVertical_weight="1"
         app:srcCompat="@drawable/plateforkandknife" />
 
     <TextView
@@ -89,6 +87,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:text="Меню"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/btnMenu"
         app:layout_constraintEnd_toEndOf="@+id/btnMenu"
         app:layout_constraintStart_toStartOf="@+id/btnMenu"

@@ -27,6 +27,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.nio.InvalidMarkException;
+import java.util.Calendar;
 
 public class TimeTable extends AppCompatActivity implements View.OnClickListener {
 
@@ -35,6 +36,7 @@ public class TimeTable extends AppCompatActivity implements View.OnClickListener
     private ImageButton btnMonday,btnTuesday,btnWednesday,btnThursday,btnFriday,
             btnSaturday,btnSunday;
 
+    int day;
     int [] imgCouch ={R.drawable.facedetection,R.drawable.smile,R.drawable.spa};
     int [] imgTimePn={R.drawable.clock,R.drawable.t1300,R.drawable.t1500};
     int[] imgActionPn ={R.drawable.plateforkandknife,R.drawable.trekking,
@@ -76,13 +78,17 @@ public class TimeTable extends AppCompatActivity implements View.OnClickListener
         listView.setFocusableInTouchMode(false);
         listView.setClickable(false);
 
+        java.util.Calendar calendar = java.util.Calendar.getInstance();
+
+        day = calendar.get(Calendar.DAY_OF_WEEK);
 
         ImageButton backToMain = (ImageButton) findViewById(R.id.back);
         backToMain.setOnClickListener(TimeTable.this);
 
 
         CheckBox complete = findViewById(R.id.complete);
-
+        setBackgroundDefaultColor();
+        setBackgroundButton();
 //        final View thumb1View = findViewById(R.id.action);
 //        thumb1View.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -95,6 +101,7 @@ public class TimeTable extends AppCompatActivity implements View.OnClickListener
 //                android.R.integer.config_shortAnimTime);
 
     }
+
     public void hideNavigator(){
         View decorView =getWindow().getDecorView();
         int uiOptions =View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |  View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
@@ -102,43 +109,159 @@ public class TimeTable extends AppCompatActivity implements View.OnClickListener
         decorView.setSystemUiVisibility(uiOptions);
     }
 
+    public void setBackgroundButton(){
+        switch (day){
+
+            case Calendar.MONDAY:
+
+                btnMonday.setBackgroundColor(getResources().getColor(R.color.GREEN));
+               break;
+
+            case Calendar.TUESDAY:
+
+                btnTuesday.setBackgroundColor(getResources().getColor(R.color.GREEN));
+                break;
+
+            case Calendar.WEDNESDAY:
+
+                btnWednesday.setBackgroundColor(getResources().getColor(R.color.GREEN));
+                break;
+
+            case Calendar.THURSDAY:
+
+                btnThursday.setBackgroundColor(getResources().getColor(R.color.GREEN));
+                break;
+
+            case Calendar.FRIDAY:
+
+                btnFriday.setBackgroundColor(getResources().getColor(R.color.GREEN));
+                break;
+
+            case Calendar.SATURDAY:
+
+                btnSaturday.setBackgroundColor(getResources().getColor(R.color.GREEN));
+                break;
+
+            case Calendar.SUNDAY:
+
+                btnSunday.setBackgroundColor(getResources().getColor(R.color.GREEN));
+                break;
+
+        }
+
+    }
+
+    public void setBackgroundDefaultColor(){
+
+        btnMonday.setBackgroundColor(getResources().getColor(R.color.WHITE));
+        btnTuesday.setBackgroundColor(getResources().getColor(R.color.WHITE));
+        btnWednesday.setBackgroundColor(getResources().getColor(R.color.WHITE));
+        btnThursday.setBackgroundColor(getResources().getColor(R.color.WHITE));
+        btnFriday.setBackgroundColor(getResources().getColor(R.color.WHITE));
+        btnSaturday.setBackgroundColor(getResources().getColor(R.color.WHITE));
+        btnSunday.setBackgroundColor(getResources().getColor(R.color.WHITE));
+    }
+
     @Override
     public void onClick(View view) {
         ListView listView=(ListView) findViewById(R.id.listTimetable);
         CustomAdapter customAdapter =new CustomAdapter();
-
+        clearBackgroundColor(day,currentDay);
         switch (view.getId()){
+
             case R.id.back:
                finish();
                 break;
             case R.id.btnMonday:
                 currentDay=0;
-
+                dayClickedColor(currentDay);
                 break;
             case R.id.btnTuesday:
                 currentDay=1;
+                dayClickedColor(currentDay);
                 break;
             case R.id.btnWednesday:
                 currentDay=2;
+                dayClickedColor(currentDay);
                 break;
             case R.id.btnThursday:
                 currentDay=3;
+                dayClickedColor(currentDay);
                 break;
             case R.id.btnFriday:
                 currentDay=4;
+                dayClickedColor(currentDay);
                 break;
             case R.id.btnSaturday:
                 currentDay=5;
+                dayClickedColor(currentDay);
                 break;
-
             case R.id.btnSunday:
                 currentDay=6;
+                dayClickedColor(currentDay);
                 break;
 
 
         }
         listView.setAdapter(customAdapter);
 
+    }
+
+    public void dayClickedColor(int currentDay){
+
+       if (currentDay+2 != day) {
+           switch (currentDay) {
+               case 0:
+                   btnMonday.setBackgroundColor(getResources().getColor(R.color.BLUE));
+                   break;
+               case 1:
+                   btnTuesday.setBackgroundColor(getResources().getColor(R.color.BLUE));
+                   break;
+               case 2:
+                   btnWednesday.setBackgroundColor(getResources().getColor(R.color.BLUE));
+                   break;
+               case 3:
+                   btnThursday.setBackgroundColor(getResources().getColor(R.color.BLUE));
+                   break;
+               case 4:
+                   btnFriday.setBackgroundColor(getResources().getColor(R.color.BLUE));
+                   break;
+               case 5:
+                   btnSaturday.setBackgroundColor(getResources().getColor(R.color.BLUE));
+                   break;
+               case 6:
+                   btnSunday.setBackgroundColor(getResources().getColor(R.color.BLUE));
+                   break;
+           }
+       }
+    }
+
+    public void clearBackgroundColor(int day,int currentDay){
+        if (currentDay+2 != day) {
+            switch (currentDay) {
+                case 0:
+                    btnMonday.setBackgroundColor(getResources().getColor(R.color.WHITE));
+                    break;
+                case 1:
+                    btnTuesday.setBackgroundColor(getResources().getColor(R.color.WHITE));
+                    break;
+                case 2:
+                    btnWednesday.setBackgroundColor(getResources().getColor(R.color.WHITE));
+                    break;
+                case 3:
+                    btnThursday.setBackgroundColor(getResources().getColor(R.color.WHITE));
+                    break;
+                case 4:
+                    btnFriday.setBackgroundColor(getResources().getColor(R.color.WHITE));
+                    break;
+                case 5:
+                    btnSaturday.setBackgroundColor(getResources().getColor(R.color.WHITE));
+                    break;
+                case 6:
+                    btnSunday.setBackgroundColor(getResources().getColor(R.color.WHITE));
+                    break;
+            }
+        }
     }
 
     class CustomAdapter extends BaseAdapter{
@@ -163,31 +286,86 @@ public class TimeTable extends AppCompatActivity implements View.OnClickListener
             ImageView time =(ImageView) view.findViewById(R.id.time);
             ImageButton btnAction =(ImageButton) view.findViewById(R.id.action);
             final ImageView couch =(ImageView) view.findViewById(R.id.couch);
-            if(currentDay==0){
+            switch (currentDay){
+                case 0:
                 time.setImageResource(imgTimePn[position]);
                 btnAction.setImageResource(imgActionPn[position]);
                 couch.setImageResource(imgCouch[position]);
+                break;
 
-            }else   if(currentDay==1){
+            case 1:
 
                 time.setImageResource(imgTimeVt[position]);
                 btnAction.setImageResource(imgActionVt[position]);
                 couch.setImageResource(imgCouch[position]);
-
+                break;
+                case 2:
+                    time.setImageResource(imgTimePn[position]);
+                    btnAction.setImageResource(imgActionPn[position]);
+                    couch.setImageResource(imgCouch[position]);
+                    break;
+                case 3:
+                    time.setImageResource(imgTimePn[position]);
+                    btnAction.setImageResource(imgActionPn[position]);
+                    couch.setImageResource(imgCouch[position]);
+                    break;
+                case 4:
+                    time.setImageResource(imgTimePn[position]);
+                    btnAction.setImageResource(imgActionPn[position]);
+                    couch.setImageResource(imgCouch[position]);
+                    break;
+                case 5:
+                    time.setImageResource(imgTimePn[position]);
+                    btnAction.setImageResource(imgActionPn[position]);
+                    couch.setImageResource(imgCouch[position]);
+                    break;
+                case 6:
+                    time.setImageResource(imgTimePn[position]);
+                    btnAction.setImageResource(imgActionPn[position]);
+                    couch.setImageResource(imgCouch[position]);
+                    break;
             }
                 btnAction.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Log.i("tag","msg");
                         Intent intent =new Intent(TimeTable.this,FullscreenImg.class);
-                        if(currentDay==0) {
+                       switch (currentDay){
+                           case 0:
                             intent.putExtra("Drawable", imgActionPn[position]);
                             intent.putExtra("video", videoPn[position]);
                             Log.i("tag", intent.getIntExtra("Drawable", 0) + "");
-                        }else   if(currentDay==1) {
+                        break;
+                           case 1:
                             intent.putExtra("Drawable", imgActionVt[position]);
                             intent.putExtra("video", videoPn[position]);
                             Log.i("tag", intent.getIntExtra("Drawable", 0) + "");
+                            break;
+                           case 2:
+                               intent.putExtra("Drawable", imgActionPn[position]);
+                               intent.putExtra("video", videoPn[position]);
+                               Log.i("tag", intent.getIntExtra("Drawable", 0) + "");
+                               break;
+                           case 3:
+                               intent.putExtra("Drawable", imgActionPn[position]);
+                               intent.putExtra("video", videoPn[position]);
+                               Log.i("tag", intent.getIntExtra("Drawable", 0) + "");
+                               break;
+                           case 4:
+                               intent.putExtra("Drawable", imgActionPn[position]);
+                               intent.putExtra("video", videoPn[position]);
+                               Log.i("tag", intent.getIntExtra("Drawable", 0) + "");
+                               break;
+                           case 5:
+                               intent.putExtra("Drawable", imgActionPn[position]);
+                               intent.putExtra("video", videoPn[position]);
+                               Log.i("tag", intent.getIntExtra("Drawable", 0) + "");
+                               break;
+                           case 6:
+                               intent.putExtra("Drawable", imgActionPn[position]);
+                               intent.putExtra("video", videoPn[position]);
+                               Log.i("tag", intent.getIntExtra("Drawable", 0) + "");
+                               break;
                         }
                           startActivity(intent);
                     }

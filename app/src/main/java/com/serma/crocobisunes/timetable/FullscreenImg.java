@@ -14,6 +14,8 @@ public class FullscreenImg extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fullscreen_img);
 
+        hideNavigator();
+
         ImageView imageView = findViewById(R.id.imgFullscreen);
         final Intent intent = getIntent();
 
@@ -38,5 +40,12 @@ public class FullscreenImg extends AppCompatActivity {
             }
 
         });
+    }
+
+    public void hideNavigator(){
+        View decorView =getWindow().getDecorView();
+        int uiOptions =View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |  View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                |View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
     }
 }
