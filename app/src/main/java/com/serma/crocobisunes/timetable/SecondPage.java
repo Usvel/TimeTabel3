@@ -34,6 +34,8 @@ public class SecondPage extends AppCompatActivity {
         setContentView(R.layout.activity_second_page);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
+        hideNavigator();
+
         dir2 = (ImageButton) findViewById(R.id.dir2);
 
         dir2.setOnClickListener(new View.OnClickListener() {
@@ -100,4 +102,10 @@ public class SecondPage extends AppCompatActivity {
         });
     }
 
+    public void hideNavigator(){
+        View decorView =getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+    }
 }
