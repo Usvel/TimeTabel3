@@ -24,11 +24,20 @@ public class Game extends AppCompatActivity {
     TextView ansVar1;
     TextView ansVar2;
 
+    public void hideNavigator(){
+        View decorView =getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+        hideNavigator();
 
         dir1 = (ImageButton) findViewById(R.id.dir1);
 
@@ -39,6 +48,15 @@ public class Game extends AppCompatActivity {
                 Intent intent = new Intent(Game.this, SecondPage.class);
                 startActivity(intent);
 
+            }
+        });
+
+        dir2 = (ImageButton) findViewById(R.id.dir2);
+
+        dir2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
 
