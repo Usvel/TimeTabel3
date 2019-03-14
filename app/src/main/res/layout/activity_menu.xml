@@ -49,7 +49,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/btnFriday"
+            android:id="@+id/btnMonday"
             android:layout_width="0dp"
             android:layout_height="match_parent"
 
@@ -60,7 +60,7 @@
             tools:layout_editor_absoluteY="8dp" />
 
         <ImageButton
-            android:id="@+id/btnThursday"
+            android:id="@+id/btnTuesday"
             android:layout_width="0dp"
             android:layout_height="match_parent"
 
@@ -69,7 +69,7 @@
             app:srcCompat="@drawable/day_of_weeke2" />
 
         <ImageButton
-            android:id="@+id/btnTuesday"
+            android:id="@+id/btnWednesday"
             android:layout_width="0dp"
             android:layout_height="match_parent"
 
@@ -80,7 +80,7 @@
             tools:layout_editor_absoluteY="8dp" />
 
         <ImageButton
-            android:id="@+id/btnMonday"
+            android:id="@+id/btnThursday"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:scaleType="fitCenter"
@@ -90,7 +90,7 @@
             tools:layout_editor_absoluteY="8dp" />
 
         <ImageButton
-            android:id="@+id/btnWednesday"
+            android:id="@+id/btnFriday"
             android:layout_width="0dp"
             android:layout_height="match_parent"
 

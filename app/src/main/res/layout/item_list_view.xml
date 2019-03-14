@@ -41,7 +41,7 @@
         android:layout_width="160dp"
         android:layout_height="120dp"
         android:layout_weight="1"
-        android:text="Действие выполнено "
+        android:text="Complete"
         tools:layout_editor_absoluteX="298dp"
         tools:layout_editor_absoluteY="59dp" />
 </LinearLayout>
