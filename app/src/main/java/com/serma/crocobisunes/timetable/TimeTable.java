@@ -86,7 +86,7 @@ public class TimeTable extends AppCompatActivity implements View.OnClickListener
         backToMain.setOnClickListener(TimeTable.this);
 
 
-        CheckBox complete = findViewById(R.id.complete);
+
         setBackgroundDefaultColor();
         setBackgroundButton();
 //        final View thumb1View = findViewById(R.id.action);
@@ -283,6 +283,7 @@ public class TimeTable extends AppCompatActivity implements View.OnClickListener
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
             final View view = getLayoutInflater().inflate(R.layout.item_list_view,null);
+            final ImageView btnChecked = (ImageView) view.findViewById(R.id.btnChecked);
             ImageView time =(ImageView) view.findViewById(R.id.time);
             ImageButton btnAction =(ImageButton) view.findViewById(R.id.action);
             final ImageView couch =(ImageView) view.findViewById(R.id.couch);
@@ -325,6 +326,20 @@ public class TimeTable extends AppCompatActivity implements View.OnClickListener
                     couch.setImageResource(imgCouch[position]);
                     break;
             }
+
+            btnChecked.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.i("MSG",btnChecked.getAlpha() + "");
+                    if (btnChecked.getAlpha() == 0.5f){
+                        btnChecked.animate().alpha(1f).start();
+                    }
+                    else {
+                        btnChecked.animate().alpha(0.5f).start();
+                    }
+                }
+            });
+
                 btnAction.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
