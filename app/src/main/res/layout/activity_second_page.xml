@@ -61,7 +61,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="На какой картинке мальчик ест?"
+        android:text="What picture does the boy jump?"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@id/walking"
         app:layout_constraintEnd_toEndOf="parent"

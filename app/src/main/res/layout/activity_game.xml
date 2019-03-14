@@ -41,12 +41,12 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="На какой картинке мальчик ест?"
+        android:text="What picture does the boy eat?"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/eating"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/eating"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
