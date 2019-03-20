@@ -17,6 +17,7 @@ public class activity_grid_item extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grid_item);
+        hideNavigator();
         imageView = findViewById(R.id.imageView);
         Intent intent = getIntent();
         int receivedImage = intent.getIntExtra("image",0);
@@ -38,5 +39,12 @@ public class activity_grid_item extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    public void hideNavigator(){
+        View decorView =getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
     }
 }

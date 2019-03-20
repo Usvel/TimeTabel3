@@ -53,7 +53,7 @@
             android:layout_height="match_parent"
             android:scaleType="fitCenter"
             app:layout_columnWeight="1"
-            app:srcCompat="@drawable/day_of_weeke1"
+            app:srcCompat="@drawable/day_of_week1"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="8dp" />
 
@@ -64,7 +64,7 @@
 
             android:scaleType="fitCenter"
             app:layout_columnWeight="1"
-            app:srcCompat="@drawable/day_of_weeke2"
+            app:srcCompat="@drawable/day_of_week3"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="8dp" />
 
@@ -75,7 +75,7 @@
 
             android:scaleType="fitCenter"
             app:layout_columnWeight="1"
-            app:srcCompat="@drawable/day_of_weeke3"
+            app:srcCompat="@drawable/day_of_week5"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="8dp" />
 
@@ -86,7 +86,7 @@
 
             android:scaleType="fitCenter"
             app:layout_columnWeight="1"
-            app:srcCompat="@drawable/day_of_weeke4" />
+            app:srcCompat="@drawable/day_of_week7" />
 
         <ImageButton
             android:id="@+id/btnFriday"
@@ -95,7 +95,7 @@
 
             android:scaleType="fitCenter"
             app:layout_columnWeight="1"
-            app:srcCompat="@drawable/day_of_weeke5"
+            app:srcCompat="@drawable/day_of_week4"
             tools:layout_editor_absoluteX="9824dp"
             tools:layout_editor_absoluteY="8dp" />
 
@@ -106,7 +106,7 @@
 
             android:scaleType="fitCenter"
             app:layout_columnWeight="1"
-            app:srcCompat="@drawable/day_of_weeke6" />
+            app:srcCompat="@drawable/day_of_week6" />
 
         <ImageButton
             android:id="@+id/btnSunday"
@@ -115,7 +115,7 @@
 
             android:scaleType="fitCenter"
             app:layout_columnWeight="1"
-            app:srcCompat="@drawable/day_of_weeke7" />
+            app:srcCompat="@drawable/day_of_week2" />
     </android.support.v7.widget.GridLayout>
 
 
