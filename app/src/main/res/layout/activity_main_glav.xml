@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+
+<TextView
+    android:id="@+id/textView4"
+    android:layout_width="169dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="8dp"
+    android:text="Расписание"
+    android:textSize="30sp"
+    app:layout_constraintBottom_toTopOf="@+id/btnTimetable"
+    app:layout_constraintEnd_toEndOf="@+id/btnTimetable"
+    app:layout_constraintHorizontal_bias="0.462"
+    app:layout_constraintStart_toStartOf="@+id/btnTimetable"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_chainStyle="packed" />
+
+<ImageButton
+    android:id="@+id/btnTimetable"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginTop="8dp"
+    android:scaleType="fitCenter"
+    android:src="@drawable/timetable"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/btnGame"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintHorizontal_weight="1"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView4"
+    app:layout_constraintVertical_weight="1" />
+
+<ImageButton
+    android:id="@+id/btnGame"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:scaleType="fitCenter"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/btnMenu"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintHorizontal_weight="1"
+    app:layout_constraintStart_toEndOf="@+id/btnTimetable"
+    app:layout_constraintTop_toBottomOf="@+id/textView"
+    app:layout_constraintVertical_weight="1"
+    app:srcCompat="@drawable/gamepad" />
+
+<TextView
+    android:id="@+id/textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:text="Игра"
+    android:textSize="30sp"
+    app:layout_constraintBottom_toTopOf="@+id/btnGame"
+    app:layout_constraintEnd_toEndOf="@+id/btnGame"
+    app:layout_constraintStart_toStartOf="@+id/btnGame"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.883"
+    app:layout_constraintVertical_weight="1" />
+
+<ImageButton
+    android:id="@+id/btnMenu"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:scaleType="fitCenter"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintHorizontal_weight="1"
+    app:layout_constraintStart_toEndOf="@+id/btnGame"
+    app:layout_constraintTop_toBottomOf="@+id/txtMenu"
+    app:layout_constraintVertical_weight="1"
+    app:srcCompat="@drawable/plateforkandknife" />
+
+<TextView
+    android:id="@+id/txtMenu"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:text="Меню"
+    android:textSize="30sp"
+    app:layout_constraintBottom_toTopOf="@+id/btnMenu"
+    app:layout_constraintEnd_toEndOf="@+id/btnMenu"
+    app:layout_constraintStart_toStartOf="@+id/btnMenu"
+    app:layout_constraintTop_toTopOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>
